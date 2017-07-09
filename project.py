@@ -12,6 +12,7 @@ def saveFeedback():
 		response2 = request.form['r1']
 		response3 = request.form['s1']
 		print response1, response2, response3
+	return render_template('feedback.html')
 
 if __name__ == '__main__':
 	app.debug = True
