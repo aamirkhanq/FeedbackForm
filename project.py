@@ -23,6 +23,8 @@ def saveFeedback():
 		try:
 			feedback_no = int(last_feedback[0]) + 1
 			cursor.execute("insert into feedbacks values (%s, %s, %s, %s);" %(feedback_no, response1, response2, response3))
+			conn.commit()
+			conn.close()
 		except:
 			feedback_no = 1
 			cursor.execute("insert into feedbacks values (%s, %s, %s, %s);" %(feedback_no, response1, response2, response3))
