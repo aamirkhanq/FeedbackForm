@@ -15,16 +15,16 @@ def MainPage():
 		cursor = conn.cursor()
 		cursor.execute("select feedback_no from feedbacks order by feedback_no desc limit 1;")
 		last_feedback = cursor.fetchall()
-		try:
-			feedback_no = int(last_feedback[0]) + 1
-			cursor.execute('insert into feedbacks ("feedback_no", "response1", "response2", "response3") values ('+ "'%s', '%s', '%s', '%s');" %(feedback_no, response1, response2, response3))
-			conn.commit()
-			conn.close()
-		except:
-			feedback_no = 1
-			cursor.execute('insert into feedbacks ("feedback_no", "response1", "response2", "response3") values ('+ "'%s', '%s', '%s', '%s');" %(feedback_no, response1, response2, response3))
-			conn.commit()
-			conn.close()
+		#try:
+		feedback_no = int(last_feedback[0]) + 1
+		cursor.execute('insert into feedbacks ("feedback_no", "response1", "response2", "response3") values ('+ "'%s', '%s', '%s', '%s');" %(feedback_no, response1, response2, response3))
+		conn.commit()
+		conn.close()
+		#except:
+		#	feedback_no = 1
+		#	cursor.execute('insert into feedbacks ("feedback_no", "response1", "response2", "response3") values ('+ "'%s', '%s', '%s', '%s');" %(feedback_no, response1, response2, response3))
+		#	conn.commit()
+		#	conn.close()
 		return redirect(url_for('saveFeedback'))
 
 @app.route('/savefeedback', methods=['GET', 'POST'])
