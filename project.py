@@ -12,7 +12,7 @@ def MainPage():
 
 @app.route('/savefeedback', methods=['GET', 'POST'])
 def saveFeedback():
-	if request.method == "GET":
+	if request.method == "POST":
 		response1 = request.form['q1']
 		response2 = request.form['r1']
 		response3 = request.form['s1']
@@ -31,7 +31,7 @@ def saveFeedback():
 			conn.commit()
 			conn.close()
 
-	return redirect(url_for('thankYouPage', feedback_no=feedback_no))
+		return redirect(url_for('thankYouPage', feedback_no=feedback_no))
 
 @app.route('/thanks')
 def thankYouPage():
