@@ -31,7 +31,7 @@ def saveFeedback():
 			conn.commit()
 			conn.close()
 
-	return redirect(url_for('thankYouPage', feedback_no=feedback_no))
+	return redirect(url_for('thankYouPage'))
 
 @app.route('/thanks')
 def thankYouPage():
