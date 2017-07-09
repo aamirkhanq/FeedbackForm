@@ -15,7 +15,7 @@ def saveFeedback():
 		response2 = request.form['r1']
 		response3 = request.form['s1']
 		print response1, response2, response3
-	return redirect('thankYouPage')
+	return redirect(url_for('thankYouPage'))
 
 @app.route('/thanks')
 def thankYouPage():
