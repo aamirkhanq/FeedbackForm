@@ -8,11 +8,6 @@ def MainPage():
 	if request.method == 'GET':
 		return render_template('index.html')
 	else:
-		return redirect(url_for('saveFeedback'))
-
-@app.route('/savefeedback', methods=['GET', 'POST'])
-def saveFeedback():
-	if request.method == "POST":
 		response1 = request.form['q1']
 		response2 = request.form['r1']
 		response3 = request.form['s1']
@@ -30,6 +25,12 @@ def saveFeedback():
 			cursor.execute("insert into feedbacks values (%s, %s, %s, %s);" %(feedback_no, response1, response2, response3))
 			conn.commit()
 			conn.close()
+		return redirect(url_for('saveFeedback'))
+
+@app.route('/savefeedback', methods=['GET', 'POST'])
+def saveFeedback():
+	if request.method == "POST":
+		pass
 
 	return redirect(url_for('thankYouPage'))
 
