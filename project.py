@@ -15,7 +15,11 @@ def saveFeedback():
 		response2 = request.form['r1']
 		response3 = request.form['s1']
 		print response1, response2, response3
-	return redirect('thankyou.html')
+	return redirect('thankYouPage')
+
+@app.route('/thanks')
+def thankYouPage():
+	return render_template('thankyou.html')
 
 if __name__ == '__main__':
 	app.debug = True
