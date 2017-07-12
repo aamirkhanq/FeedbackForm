@@ -62,7 +62,7 @@ def thankYouPage():
 
 	conn.close()
 
-	return render_template('thankyou.html', total_feedback=total_feedback, total_yes_option1=total_yes_option1, 
+	return render_template('thankyou.html', total_feedbacks=total_feedbacks, total_yes_option1=total_yes_option1, 
 		total_no_option1=total_no_option1, total_cant_option1=total_cant_option1, total_yes_option2=total_yes_option2,
 		total_no_option2=total_no_option2, total_cant_option2=total_cant_option2, total_yes_option3=total_yes_option3,
 		total_no_option3=total_no_option3, total_cant_option3=total_cant_option3)
