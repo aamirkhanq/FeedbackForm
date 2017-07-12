@@ -37,31 +37,31 @@ def saveFeedback():
 def thankYouPage():
 	conn = psycopg2.connect("dbname=feedbacks")
 	cursor = conn.cursor()
-	cursor.execute("select num(*) as count from feedbacks")
+	cursor.execute("select count(*) as count from feedbacks")
 	total_feedbacks = cursor.fetchall()[0][0]
-	cursor.execute("select num(*) from feedback where option1='Yes'")
+	cursor.execute("select count(*) from feedback where option1='Yes'")
 	total_yes_option1 = cursor.fetchall()[0][0]
-	cursor.execute("select num(*) from feedback where option1='No'")
+	cursor.execute("select count(*) from feedback where option1='No'")
 	total_no_option1 = cursor.fetchall()[0][0]
-	cursor.execute("select num(*) from feedback where option1='Cannot Say'")
+	cursor.execute("select count(*) from feedback where option1='Cannot Say'")
 	total_cant_option1 = cursor.fetchall()[0][0]
 
-	cursor.execute("select num(*) from feedback where option2='Yes'")
+	cursor.execute("select count(*) from feedback where option2='Yes'")
 	total_yes_option2 = cursor.fetchall()[0][0]
-	cursor.execute("select num(*) from feedback where option2='No'")
+	cursor.execute("select count(*) from feedback where option2='No'")
 	total_no_option2 = cursor.fetchall()[0][0]
-	cursor.execute("select num(*) from feedback where option2='Cannot Say'")
+	cursor.execute("select count(*) from feedback where option2='Cannot Say'")
 	total_cant_option2 = cursor.fetchall()[0][0]
 
-	cursor.execute("select num(*) from feedback where option3='Yes'")
+	cursor.execute("select count(*) from feedback where option3='Yes'")
 	total_yes_option3 = cursor.fetchall()[0][0]
-	cursor.execute("select num(*) from feedback where option3='No'")
+	cursor.execute("select count(*) from feedback where option3='No'")
 	total_no_option3 = cursor.fetchall()[0][0]
-	cursor.execute("select num(*) from feedback where option3='Cannot Say'")
+	cursor.execute("select count(*) from feedback where option3='Cannot Say'")
 	total_cant_option3 = cursor.fetchall()[0][0]
 
 	conn.close()
-	
+
 	return render_template('thankyou.html', total_feedback=total_feedback, total_yes_option1=total_yes_option1, 
 		total_no_option1=total_no_option1, total_cant_option1=total_cant_option1, total_yes_option2=total_yes_option2,
 		total_no_option2=total_no_option2, total_cant_option2=total_cant_option2, total_yes_option3=total_yes_option3,
