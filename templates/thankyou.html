@@ -1,19 +1,13 @@
 <h2>Thanks for your feedback.</h2>
 <p>
 <b>Q1.</b>Are you satisfied with the facilities provided in HITES Canteen?<br>
-a) Yes.................... {{(total_yes_option1/total_feedbacks)*100}} %<br>
-b) No..................... {{(total_no_option1/total_feedbacks)*100}} %<br>
-c) Cannot Say............. {{(total_cant_option1/total_feedbacks)*100}} %
+{{bar_chart1.render()|safe}}
 </p>
 <p>
 <b>Q2.</b>Are the services provided by HITES IT Department quick?<br>
-a) Yes.................... {{(total_yes_option2/total_feedbacks)*100}} %<br>
-b) No..................... {{(total_no_option2/total_feedbacks)*100}} %<br>
-c) Cannot Say............. {{(total_cant_option2/total_feedbacks)*100}} %
+{{bar_chart2.render()|safe}}
 </p>
 <p>
 <b>Q3.</b>Are you satisfied with the Work Culture of HITES?<br>
-a) Yes.................... {{(total_yes_option3/total_feedbacks)*100}} %<br>
-b) No..................... {{(total_no_option3/total_feedbacks)*100}} %<br>
-c) Cannot Say............. {{(total_cant_option3/total_feedbacks)*100}} %
+{{bar_chart3.render()|safe}}
 </p>
